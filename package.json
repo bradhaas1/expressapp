@@ -1,0 +1,30 @@
+{
+  "name": "expressnode",
+  "version": "0.0.0",
+  "description": "expressnode\r ===========",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "express": "4.8.2",
+    "express-handlebars": "1.0.1",
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.1.3",
+    "twitter-bootstrap": "2.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/bradhaas1/expressnode"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bradhaas1/expressnode/issues"
+  },
+  "homepage": "https://github.com/bradhaas1/expressnode",
+  "dependencies": {
+    "handlebars": "^2.0.0-alpha.4",
+    "jade": "^1.5.0"
+  }
+}
