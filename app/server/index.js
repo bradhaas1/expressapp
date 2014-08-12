@@ -1,14 +1,15 @@
 var express = require('express');
-var exphbs  = require('express-handlebars');
-
+var routes = require('./routes');
+var configureApp  = require('./configureApp');
 var app = express();
-var routes = require('../../routes');
 
-app.use(express.static('css'));
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
+function createApplication(environment){
+  app.get('/', routes.indexRoute);
+  app.get('/mps-sidebarflexone-adpreview', routes.iframes);
 
-app.get('/', routes.indexRoute);
-app.get('/mps-sidebarflexone-ads', routes.iframes);
+  configureApp.for(environment, app);
+  app.listen(process.env.PORT);
+  return app;
+}
 
-app.listen(3000);
+module.exports.start = createApplication;
