@@ -16,6 +16,7 @@
     "grunt-mocha": "~0.4.10",
     "grunt-mocha-test": "^0.11.0",
     "grunt-modernizr": "~0.5.2",
+    "grunt-contrib-uglify": "~0.4.0",
     "load-grunt-tasks": "~0.4.0",
     "twitter-bootstrap": "2.1.1"
   },
