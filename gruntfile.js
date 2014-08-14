@@ -1,26 +1,58 @@
+var path = require('path');
+
 module.exports = function(grunt) {
+
+  var config = {
+    client: 'app/client',
+    server: 'app/server',
+    dist: 'dist'
+  };
+
+//  console.log('<%= config.server %>');
+//  console.log('<%= pkg.name %>');
+
   grunt.initConfig({
-    // Configurable paths
-
-
     pkg: grunt.file.readJSON('package.json'),
+    jshint: {
+      all: ['app/server/scripts/**/*.js']
+    },
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
-      build:{
-        src: 'src/<%= pkg.name %>.js',
-        dst: 'build/<%= pkg.name %>.min.js'
+      build: {
+        src: 'app/server/scripts/**/*.js',
+        dest: 'dist/scripts/main.min.js'
+      }
+    },
+    sass: {
+      compile:{
+        files: {
+          expand: true,
+          cwd: 'app/client/styles',
+          src: '**/*',
+          dest: 'dist/styles/'
+        }
+      }
+    },
+    copy: {
+      main: {
+        expand: true,
+        cwd: 'app/server/views',
+        src: '**/*.hbs',
+        dest: 'dist/views/'
       }
     }
   });
 
-  // load the plugin that supplies uglify task
+// load plugins
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-sass');
 
-  // register default task
-  grunt.registerTask('default', ['uglify']);
+// register default tasks
+  grunt.registerTask('default', ['uglify', 'jshint', 'copy', 'sass']);
+}
 
-
-};
 

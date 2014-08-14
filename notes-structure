@@ -1,0 +1,12 @@
+Root
+  -app
+    -client
+      -images
+      -scripts
+      -styles
+        --scss
+    -server
+  -dist
+  -test
+
+client files are compiled into dist(distribution) - essentially public folder(?)

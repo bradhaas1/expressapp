@@ -1,0 +1,3 @@
+banner - heading generated and placed at top of file
+flatten - remove all path parts from generated dest paths.
+expand - process a dynamic src-dest file mapping

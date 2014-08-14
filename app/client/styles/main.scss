@@ -1,0 +1,16 @@
+$highlightColor: #0f0;
+$backColor: #f00;
+h3{
+  font-family:arial, sans-serif;
+  color: $highlightColor;
+}
+
+.wrapper{
+  width: 300px;
+  margin: 20px auto;
+  background-color: $backColor;
+}
+#sidebarflexone-container{
+  width:300px;
+  height: 600px;
+}
