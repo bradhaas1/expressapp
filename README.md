@@ -6,7 +6,10 @@ working dependencies
   --express-handlebars
   --grunt
   --grunt-contrib-uglify
+    - server/scripts -> dist/scripts
   --grunt-contrib-jshint
-    - server/scripts
+    - test server/scripts
   --grunt-contrib-copy
-    - views: server->dist
+    - views: app/server/views -> dist/views
+  --grunt-sass
+    - app/client/styles/main.scss
