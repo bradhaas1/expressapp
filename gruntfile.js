@@ -28,10 +28,7 @@ module.exports = function(grunt) {
     sass: {
       compile:{
         files: {
-          expand: true,
-          cwd: 'app/client/styles',
-          src: '**/*',
-          dest: 'dist/styles/'
+          'dist/styles/main.css': 'app/client/styles/main.scss'
         }
       }
     },
